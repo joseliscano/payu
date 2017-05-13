@@ -26,10 +26,10 @@ class CartController extends Controller
     	$totalPrice = $total[0]['total'];
     	$dt = Carbon::now();
     	$referenceCode = $dt->year . $dt->month . $dt->day . $dt->hour . $dt->minute . $dt->second . $dt->micro ;
-    	$merchantId = 508029;
-    	$ApiKey = "4Vj8eK4rloUd272L48hsrarnUA";
+    	$merchantId = 646739;
+    	$ApiKey = "j7Wkxa18Nm5ltZYycTmLi1K3GO";
     	$currency = "COP";
-    	$accountId = 512326;
+    	$accountId = 649185;
     	$buyerEmail = "test@test.com";
     	$signature = md5($ApiKey . '~' . $merchantId . '~' . $referenceCode . '~' . $totalPrice . '~' . $currency);
         return view('partials.forms.order', compact('items', 'totalPrice', 'referenceCode', 'merchantId', 'ApiKey', 'currency', 'accountId', 'buyerEmail', 'signature'));
