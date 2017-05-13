@@ -15,7 +15,9 @@ class ApiController extends Controller
      */
 	public function index()
     {
-
+        error_log("Llega index: " . print_r($_REQUEST, true) . "\n", 3, 'files/response' . Carbon::now() . '.txt');
+        $products = Product::all();
+        return redirect('/');
     }
 
     /**
