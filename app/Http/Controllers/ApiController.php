@@ -11,9 +11,9 @@ class ApiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+	public function index($request)
     {
-        //
+        error_log(print_r($request, true), 3, 'files/file.txt');
     }
 
     /**

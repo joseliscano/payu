@@ -13,6 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/response/{payuresponse}', 'ApiController@index');
+
+Route::middleware('auth:api')->post('/confirmation', 'ApiController@store');
