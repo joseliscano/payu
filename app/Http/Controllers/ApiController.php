@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Product;
 
 class ApiController extends Controller
 {
@@ -15,7 +16,8 @@ class ApiController extends Controller
 	public function index($request)
     {
         error_log(print_r($request, true), 3, 'files/response' . Carbon::now() . '.txt');
-        return view('/');
+        $products = Product::all();
+        return view('partials.home.home', compact('products'));
     }
 
     /**
