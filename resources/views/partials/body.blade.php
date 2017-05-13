@@ -29,10 +29,10 @@
 	<div class="container">@yield('content')</div>
 		
 	<!-- jQuery -->
-	<script src="template/js/jquery.js"></script>
+	<script src="{{ asset(template/js/jquery.js) }}"></script>
 	
 	<!-- Bootstrap Core JavaScript -->
-	<script src="template/js/bootstrap.min.js"></script>
+	<script src="{{ asset(template/js/bootstrap.min.js) }}"></script>
 	<script>
 		$('div.alert').not('.alert-important').delay(3000).fadeOut(350);
 	</script>
