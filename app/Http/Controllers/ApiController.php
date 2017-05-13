@@ -17,7 +17,7 @@ class ApiController extends Controller
     {
         error_log(print_r($request, true), 3, 'files/response' . Carbon::now() . '.txt');
         $products = Product::all();
-        return redirect('/public');
+        return redirect('/');
     }
 
     /**
