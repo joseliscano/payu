@@ -89,7 +89,6 @@
 			  <input name="sourceUrl" id="urlOrigen" value="" type="hidden"/>
 			  <input name="buttonType" value="SIMPLE" type="hidden"/>
 			  <input name="signature" value="{{ $signature }}" type="hidden"/>
-			  <input name="test"          type="hidden"  value="1" >
 			</form>
 			
 		</div>
