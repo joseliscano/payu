@@ -65,7 +65,7 @@
 				  <input name="test"          type="hidden"  value="1" >
 				  <input name="buyerEmail"    type="hidden"  value="test@test.com" >
 				  <input name="responseUrl"    type="hidden"  value="http://notify.pe.hu/public/api/response" >
-				  <input name="confirmationUrl" type="hidden" value="http://www.test.com/confirmation" >
+				  <input name="confirmationUrl" type="hidden" value="http://notify.pe.hu/public/api/confirmation" >
 				  <input name="Submit" class="btn btn-primary" type="submit"  value="Realizar pago" >
 			</form>
 		</div>
