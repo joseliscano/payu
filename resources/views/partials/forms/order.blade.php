@@ -52,7 +52,7 @@
 			</table>
 		</div>
 		<div>
-			 <form method="post" action="https://sandbox.gateway.payulatam.com/ppp-web-gateway/">
+			 <form method="post" action=" https://sandbox.gateway.payulatam.com/ppp-web-gateway">
 				  <input name="merchantId"    type="hidden"  value="{{ $merchantId }}"   >
 				  <input name="accountId"     type="hidden"  value="{{ $accountId }}" >
 				  <input name="description"   type="hidden"  value="Test PAYU"  >

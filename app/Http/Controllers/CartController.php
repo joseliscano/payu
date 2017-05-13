@@ -29,7 +29,7 @@ class CartController extends Controller
     	$merchantId = 508029;
     	$ApiKey = "4Vj8eK4rloUd272L48hsrarnUA";
     	$currency = "COP";
-    	$accountId = 512321;
+    	$accountId = 512326;
     	$buyerEmail = "test@test.com";
     	$signature = md5($ApiKey . '~' . $merchantId . '~' . $referenceCode . '~' . $totalPrice . '~' . $currency);
         return view('partials.forms.order', compact('items', 'totalPrice', 'referenceCode', 'merchantId', 'ApiKey', 'currency', 'accountId', 'buyerEmail', 'signature'));
