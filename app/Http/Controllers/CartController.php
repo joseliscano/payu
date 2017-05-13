@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Cart;
+use Carbon\Carbon;
 
 class CartController extends Controller
 {
@@ -23,7 +24,9 @@ class CartController extends Controller
     			->where('status', 'added')
     			->get();
     	$totalPrice = $total[0]['total'];
-        return view('partials.forms.order', compact('items', 'totalPrice'));
+    	$dt = Carbon::now();
+    	$referenceCode = $dt->year . $dt->month . $dt->day . $dt->hour . $dt->minute . $dt->second . $dt->micro ;
+        return view('partials.forms.order', compact('items', 'totalPrice', 'referenceCode'));
     }
 
     /**
