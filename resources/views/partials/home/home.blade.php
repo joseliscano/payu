@@ -42,7 +42,7 @@
 						<h4>
 							{{ $product->description }}
 						</h4>
-						<form action="/addToCart" method="post">
+						<form action="/public/addToCart" method="post">
 							{{ csrf_field() }}
 							<input type="hidden" name="product_id" value="{{ $product->id }}" />
 							<input type="hidden" name="description" value="{{ $product->description }}" />
