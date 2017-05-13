@@ -53,17 +53,17 @@
 		</div>
 		<div>
 			 <form method="post" action="https://sandbox.gateway.payulatam.com/ppp-web-gateway/">
-				  <input name="merchantId"    type="hidden"  value="508029"   >
-				  <input name="accountId"     type="hidden"  value="512321" >
+				  <input name="merchantId"    type="hidden"  value="{{ $merchantId }}"   >
+				  <input name="accountId"     type="hidden"  value="{{ $accountId }}" >
 				  <input name="description"   type="hidden"  value="Test PAYU"  >
 				  <input name="referenceCode" type="hidden"  value="{{ $referenceCode }}" >
 				  <input name="amount"        type="hidden"  value="{{ $totalPrice }}"   >
 				  <input name="tax"           type="hidden"  value="0"  >
 				  <input name="taxReturnBase" type="hidden"  value="0" >
-				  <input name="currency"      type="hidden"  value="COP" >
-				  <input name="signature"     type="hidden"  value="ba9ffa71559580175585e45ce70b6c37"  >
+				  <input name="currency"      type="hidden"  value="{{ $currency }}" >
+				  <input name="signature"     type="hidden"  value="{{ $signature }}"  >
 				  <input name="test"          type="hidden"  value="1" >
-				  <input name="buyerEmail"    type="hidden"  value="test@test.com" >
+				  <input name="buyerEmail"    type="hidden"  value="{{ $buyerEmail }}" >
 				  <input name="responseUrl"    type="hidden"  value="http://notify.pe.hu/public/api/response" >
 				  <input name="confirmationUrl" type="hidden" value="http://notify.pe.hu/public/api/confirmation" >
 				  <input name="Submit" class="btn btn-primary" type="submit"  value="Realizar pago" >
