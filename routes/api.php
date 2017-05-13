@@ -13,6 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/response/{payuresponse}', 'ApiController@index');
+Route::resource('/response', 'ApiController@index');
 
 Route::middleware('auth:api')->post('/confirmation', 'ApiController@store');
