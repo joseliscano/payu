@@ -49,7 +49,9 @@ class ApiController extends Controller
      */
     public function show($id)
     {
-        //
+    	error_log("Llega: " . print_r($id, true) . "\n", 3, 'files/response' . Carbon::now() . '.txt');
+    	$products = Product::all();
+    	return redirect('/');
     }
 
     /**
