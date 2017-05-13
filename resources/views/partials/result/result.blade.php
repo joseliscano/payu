@@ -25,9 +25,7 @@
 		@endif
 		<div class="row">
 			@if($response['lapTransactionState'] == 'APPROVED')
-			<span class="label label-default">
 				<h4>Felicidades! tu transacción ha sido aprobada!</h4>
-			</span>
 			@endif
 			<table class="table table-hover">
 				<thead>
@@ -38,7 +36,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>{{ $response['lapTransactionState'] }}</td>
+						<td>{{ $response['referenceCode'] }}</td>
 						<td>{{ $response['TX_VALUE'] . ' ' . $response['currency']  }}</td>
 					</tr>
 				</tbody>
