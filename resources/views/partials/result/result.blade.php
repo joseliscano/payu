@@ -25,9 +25,9 @@
 		@endif
 		<div class="row">
 			@if($response['lapTransactionState'] == 'APPROVED')
-			<div class="alert alert-success" role="alert">
+			<span class="label label-default">
 				<h4>Felicidades! tu transacción ha sido aprobada!</h4>
-			</div>
+			</span>
 			@endif
 			<table class="table table-hover">
 				<thead>
