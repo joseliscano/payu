@@ -69,7 +69,7 @@
 				  <input name="Submit" class="btn btn-primary" type="submit"  value="Realizar pago" >
 			</form>  -->
 			
-			<form method="post" action="https://sandbox.gateway.payulatam.com/ppp-web-gateway" accept-charset="UTF-8">
+			<form method="post" action="https://test.payu.in/_payment" accept-charset="UTF-8">
 			  <input type="image" border="0" alt="" src="http://www.payulatam.com/img-secure-2015/boton_pagar_mediano.png" onClick="this.form.urlOrigen.value = window.location.href;"/>
 			  <input name="buttonId" type="hidden" value="vO4KL61DB8UuCcnigX5SPyZo/Vh4SumspKf7pzDMmDgrlDKMt9TJBA=="/>
 			  <input name="merchantId" type="hidden" value="{{ $merchantId }}"/>
