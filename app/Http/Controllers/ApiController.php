@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class ApiController extends Controller
 {
@@ -13,7 +14,7 @@ class ApiController extends Controller
      */
 	public function index($request)
     {
-        error_log(print_r($request, true), 3, 'files/file.txt');
+        error_log(print_r($request, true), 3, 'files/response' . Carbon::now() . '.txt');
     }
 
     /**
