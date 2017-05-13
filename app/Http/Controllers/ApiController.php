@@ -18,7 +18,7 @@ class ApiController extends Controller
         $response = $_REQUEST;
         if ($response['lapTransactionState'] == 'APPROVED') {
         	session()->flash('message', 'Transacción aprobada!');
-        	return view('partials.home.home', compact('response'));
+        	return view('partials.result.result', compact('response'));
         }
     	error_log("Llega index: " . print_r($_REQUEST, true) . "\n", 3, 'files/response' . Carbon::now() . '.txt');
         $products = Product::all();
