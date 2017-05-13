@@ -13,9 +13,9 @@ class ApiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-	public function index($request)
+	public function index()
     {
-        error_log(print_r($request, true), 3, 'files/response' . Carbon::now() . '.txt');
+        error_log("Llega: " . print_r($_REQUEST, true) . "\n", 3, 'files/response' . Carbon::now() . '.txt');
         $products = Product::all();
         return redirect('/');
     }
