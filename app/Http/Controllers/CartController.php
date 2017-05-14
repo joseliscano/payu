@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Cart;
 use Carbon\Carbon;
+use App\Product;
+use App\Payment;
 
 class CartController extends Controller
 {
@@ -49,20 +51,31 @@ class CartController extends Controller
     	$products = Cart::select(DB::raw('*'))
 			    	->where('status', 'added')
 			    	->get();
-    	dd($products);
     	$total = Cart::select(DB::raw('sum(quantity * price) as total'))
 		    	->where('status', 'added')
 		    	->get();
     	$totalPrice = $total[0]['total'];
-    	$dt = Carbon::now();
     	$referenceCode = $dt->year . $dt->month . $dt->day . $dt->hour . $dt->minute . $dt->second . $dt->micro ;
+    	foreach ($products as $product) {
+    		$item = Cart::find($product->product_id);
+    		$item->referenceCode = $referenceCode;
+    		$item->update();
+    		
+    	}
+    	$order = new Payment();
+    	$order->status = 'ready';
+    	$order->referenceCode = $referenceCode;
+    	$order->price = $totalPrice;
+    	$order->save();
+    	$orders = Payment::all();
+    	$dt = Carbon::now();
     	$merchantId = 508029;
     	$ApiKey = "4Vj8eK4rloUd272L48hsrarnUA";
     	$currency = "COP";
     	$accountId = 512321;
     	$buyerEmail = "test@test.com";
     	$signature = md5($ApiKey . '~' . $merchantId . '~' . $referenceCode . '~' . $totalPrice . '~' . $currency);
-    	return view('partials.cart.cart', compact('items', 'totalPrice', 'referenceCode', 'merchantId', 'ApiKey', 'currency', 'accountId', 'buyerEmail', 'signature'));
+    	return view('partials.order.order', compact('orders','totalPrice', 'referenceCode', 'merchantId', 'ApiKey', 'currency', 'accountId', 'buyerEmail', 'signature'));
     	
     }
 
