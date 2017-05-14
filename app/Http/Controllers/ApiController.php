@@ -43,7 +43,7 @@ class ApiController extends Controller
      */
     public function store(Request $request)
     {
-    	var_dump($request);
+    	var_dump($request->variable);
     	die();
     	dd($request->input('variable'));
     	error_log("Llega: " . print_r($request->variable, true) . "\n", 3, 'files/confirmation' . Carbon::now() . '.txt');
