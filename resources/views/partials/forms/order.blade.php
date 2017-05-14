@@ -69,10 +69,10 @@
 							</td>
 							<td>
 								<div>
-									<form id="formCancelar" action="/public/cancelOrder" method="POST">
+									<form id="formCancelar" action="/public/cancelOrder/{{ $order->referenceCode }}" method="POST">
 										{{ csrf_field() }}
 										<input type="hidden" name="_method" value="DELETE">
-										<input name="referenceCode" type="hidden" value="{{ $order->referenceCode }}"/>
+										
 										<input type="submit" class="btn btn-danger" value="Cancelar" />
 									</form>
 								</div>
