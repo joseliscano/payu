@@ -42,7 +42,6 @@
 							<td>{{ $order->price }}</td>
 							@if($order->status == 'ready' || $order->status == 'rejected')
 							<td>
-								<div>
 									<form id="formPago" method="post" action="https://sandbox.gateway.payulatam.com/ppp-web-gateway" accept-charset="UTF-8">
 									  <input type="image" border="0" alt="" src="http://www.payulatam.com/img-secure-2015/boton_pagar_mediano.png" onClick="this.form.urlOrigen.value = window.location.href;"/>
 									  <input name="buttonId" type="hidden" value="vO4KL61DB8UuCcnigX5SPyZo/Vh4SumspKf7pzDMmDgrlDKMt9TJBA=="/>
@@ -64,7 +63,6 @@
 									  <input name="signature" value="{{ $order->signature }}" type="hidden"/>
 									  <input name="test" type="hidden"  value="1" >
 									</form>
-								</div>
 							</td>
 							<td>
 								<form id="formCancelar" action="/public/cancelOrder/{{ $order->referenceCode }}" method="POST">
