@@ -43,7 +43,7 @@
 							<td>
 								@if($order->status == 'ready' || $order->status == 'rejected')
 								<div>
-									<form method="post" action="https://sandbox.gateway.payulatam.com/ppp-web-gateway" accept-charset="UTF-8">
+									<form id="formPago" method="post" action="https://sandbox.gateway.payulatam.com/ppp-web-gateway" accept-charset="UTF-8">
 									  <input type="image" border="0" alt="" src="http://www.payulatam.com/img-secure-2015/boton_pagar_mediano.png" onClick="this.form.urlOrigen.value = window.location.href;"/>
 									  <input name="buttonId" type="hidden" value="vO4KL61DB8UuCcnigX5SPyZo/Vh4SumspKf7pzDMmDgrlDKMt9TJBA=="/>
 									  <input name="merchantId" type="hidden" value="{{ $merchantId }}"/>
@@ -69,7 +69,7 @@
 							</td>
 							<td>
 								<div>
-									<form action="/public/cancelOrder" method="">
+									<form id="formCancelar" action="/public/cancelOrder" method="">
 										{{ csrf_field() }}
 										<input type="hidden" name="_method" value="DELETE" />
 										<input name="referenceCode" type="hidden" value="{{ $order->referenceCode }}"/>
