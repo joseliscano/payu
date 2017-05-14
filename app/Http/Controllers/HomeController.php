@@ -29,6 +29,7 @@ class HomeController extends Controller
     {
     	$path = '/public/files';
     	$i = 0;
+    	$files = 0;
     	if(is_dir($path)){
     		if($dir = opendir($path)){
     			while(($archivo = readdir($dir)) !== false){
