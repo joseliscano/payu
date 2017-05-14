@@ -26,7 +26,8 @@ class CartController extends Controller
     			->where('status', 'added')
     			->get();
     	$totalPrice = $total[0]['total'];
-		dd(empty($items));
+    	if($items == ""){$result = 'vacio';}else{$result = 'lleno';}
+		dd($result);
         return view('partials.cart.cart', compact('items', 'totalPrice'));
     }
 
