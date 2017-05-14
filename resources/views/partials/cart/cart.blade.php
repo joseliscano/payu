@@ -50,7 +50,7 @@
 					</tr>
 				</tbody>
 			</table>
-		<form action="/order" method="post">
+		<form action="/public/order" method="post">
 		{{ csrf_field() }}
 			<input type="hidden" value="{{ $items }}"/>
 			<input type="submit" class="btn btn-primary" value="Generar orden" />
