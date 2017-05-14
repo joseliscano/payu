@@ -56,6 +56,7 @@
 									  <input name="currency" type="hidden" value="COP"/>
 									  <input name="lng" type="hidden" value="es"/>
 									  <input name="responseUrl"    type="hidden"  value="http://notify.pe.hu/public/api/response" >
+									  <input name="confirmationUrl"    type="hidden"  value="http://notify.pe.hu/public/api/response" >
 									  <input name="displayShippingInformation" type="hidden" value="NO"/>
 									  <input name="sourceUrl" id="urlOrigen" value="" type="hidden"/>
 									  <input name="buttonType" value="SIMPLE" type="hidden"/>
