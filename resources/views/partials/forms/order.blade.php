@@ -30,8 +30,8 @@
 						<th>Estado</th>
 						<th>Referencia</th>
 						<th>Precio</th>
-						<th>Pagar</th>
 						<th>Cancelar Orden</th>
+						<th>Pagar</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -41,6 +41,14 @@
 							<td>{{ $order->referenceCode }}</td>
 							<td>{{ $order->price }}</td>
 							@if($order->status == 'ready' || $order->status == 'rejected')
+							<td>
+								<form id="formCancelar" action="/public/cancelOrder/{{ $order->referenceCode }}" method="POST">
+									{{ csrf_field() }}
+									<input type="hidden" name="_method" value="DELETE">
+									
+									<input type="submit" class="btn btn-danger" value="Cancelar" />
+								</form>
+							</td>
 							<td>
 									<form id="formPago" method="post" action="https://sandbox.gateway.payulatam.com/ppp-web-gateway" accept-charset="UTF-8">
 									  <input type="image" border="0" alt="" src="http://www.payulatam.com/img-secure-2015/boton_pagar_mediano.png" onClick="this.form.urlOrigen.value = window.location.href;"/>
@@ -64,14 +72,7 @@
 									  <input name="test" type="hidden"  value="1" >
 									</form>
 							</td>
-							<td>
-								<form id="formCancelar" action="/public/cancelOrder/{{ $order->referenceCode }}" method="POST">
-									{{ csrf_field() }}
-									<input type="hidden" name="_method" value="DELETE">
-									
-									<input type="submit" class="btn btn-danger" value="Cancelar" />
-								</form>
-							</td>
+							
 							@endif
 						</tr>
 					@endforeach
