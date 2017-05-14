@@ -73,7 +73,7 @@
 										{{ csrf_field() }}
 										{{ method_field('DELETE') }}
 										<input name="referenceCode" type="hidden" value="{{ $order->referenceCode }}"/>
-										<input type="submit" class="btn btn-primary" value="Cancelar" />
+										<input type="submit" class="btn btn-danger" value="Cancelar" />
 									</form>
 								</div>
 							</td>
