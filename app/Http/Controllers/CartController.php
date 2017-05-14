@@ -117,7 +117,17 @@ class CartController extends Controller
     public function update(Request $request, $id)
     {
         $url = 'https://sandbox.gateway.payulatam.com/ppp-web-gateway';
-        
+        $client = new GuzzleHttp\Client(['base_uri' => $url]);
+        $response = $client->post($url, [
+        		// un array con la data de los headers como tipo de peticion, etc.
+        		
+        		// array de datos del formulario
+        		'body' => [
+        				'name' => 'jeff',
+        				'emai' => 'foo@bar.com',
+        				'pass' => 'secret'
+        		]
+        ]);
     }
 
     /**
