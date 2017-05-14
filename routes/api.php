@@ -14,5 +14,3 @@ use Illuminate\Http\Request;
 */
 
 Route::resource('/response', 'ApiController');
-
-//Route::resource('/confirmation', 'ApiController');

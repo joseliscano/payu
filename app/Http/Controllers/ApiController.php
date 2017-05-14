@@ -46,29 +46,20 @@ class ApiController extends Controller
     public function store(Request $request)
     {
     	error_log("Llega: " . print_r($request->input(), true) . "\n", 3, 'files/confirmation' . Carbon::now() . '.txt');
-    	$payment = Payment::where('referenceCode', $request->reference_sale)->update(['status' => 'confirmed']);
-    	//$payment->status = "confirmed";
-    	//$payment->save();
-    	var_dump($payment);
-    	die();
-    	
-    	/*App\Flight::where('active', 1)
-    	->where('destination', 'San Diego')
-    	->update(['delayed' => 1]);*/
-    	
-    	$cart = Cart::all()->where('referenceCode', $request->reference_sale);
     	switch ($request->response_message_pol){
     		case "APPROVED":
-    			$payment->status = "confirmed";
-    			$cart->status = "confirmed";
-    			$payment->update();
-    			$cart->update();
+    			Payment::where('referenceCode', $request->reference_sale)->update(['status' => 'confirmed']);
+    			Cart::where('referenceCode', $request->reference_sale)->update(['status' => 'confirmed']);
     			break;
     			
     		case "REJECTED":
+    			Payment::where('referenceCode', $request->reference_sale)->update(['status' => 'rejected']);
+    			Cart::where('referenceCode', $request->reference_sale)->update(['status' => 'rejected']);
     			break;
     			
     		case "PENDING":
+    			Payment::where('referenceCode', $request->reference_sale)->update(['status' => 'pending']);
+    			Cart::where('referenceCode', $request->reference_sale)->update(['status' => 'pending']);
     			break;
     			
     		default:
