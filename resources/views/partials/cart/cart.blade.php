@@ -52,8 +52,8 @@
 			</table>
 		<form action="/order" method="post">
 		{{ csrf_field() }}
-		<input type="hidden" value="{{ $items }}"/>
-			<a class="btn btn-primary" href="">Generar orden</a>
+			<input type="hidden" value="{{ $items }}"/>
+			<input type="submit" class="btn btn-primary" value="Generar orden" />
 		</form>
 		</div>
 	</div>
