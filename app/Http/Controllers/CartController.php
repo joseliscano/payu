@@ -75,7 +75,7 @@ class CartController extends Controller
     	$accountId = 512321;
     	$buyerEmail = "test@test.com";
     	$signature = md5($ApiKey . '~' . $merchantId . '~' . $referenceCode . '~' . $totalPrice . '~' . $currency);
-    	return view('partials.order.order', compact('orders','totalPrice', 'referenceCode', 'merchantId', 'ApiKey', 'currency', 'accountId', 'buyerEmail', 'signature'));
+    	return view('partials.order.order', compact('orders', 'merchantId', 'ApiKey', 'currency', 'accountId', 'buyerEmail', 'signature'));
     	
     }
 
