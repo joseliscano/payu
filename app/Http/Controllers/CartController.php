@@ -60,6 +60,7 @@ class CartController extends Controller
     	foreach ($products as $product) {
     		$item = Cart::find($product->id);
     		$item->referenceCode = $referenceCode;
+    		$item->status = "order";
     		$item->update();
     		
     	}

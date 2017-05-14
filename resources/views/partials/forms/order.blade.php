@@ -4,7 +4,7 @@
 <div class="row">
 	@include('partials.lateralbar')
 	<div class="col-md-9">
-		<h3>Carrito de compras</h3>
+		<h3>Listado de ordenes</h3>
 		@if($flash = session('message'))
 			<div class="alert alert-success alert-dismissible fade in"
 				role="alert">
@@ -27,7 +27,7 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>Estatus</th>
+						<th>Estado</th>
 						<th>Referencia</th>
 						<th>Precio</th>
 						<th>Pagar</th>
