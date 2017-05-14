@@ -96,7 +96,7 @@ class CartController extends Controller
     
     public function order(Request $request)
     {
-    	dd("llega la orden");
+    	dd($request);
     	$dt = Carbon::now();
     	$referenceCode = $dt->year . $dt->month . $dt->day . $dt->hour . $dt->minute . $dt->second . $dt->micro ;
     	$merchantId = 508029;
