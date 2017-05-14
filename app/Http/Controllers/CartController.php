@@ -37,7 +37,13 @@ class CartController extends Controller
      */
     public function create()
     {
-        //
+    	$orders = Payment::all();
+    	$merchantId = 508029;
+    	$ApiKey = "4Vj8eK4rloUd272L48hsrarnUA";
+    	$currency = "COP";
+    	$accountId = 512321;
+    	$buyerEmail = "test@test.com";
+    	return view('partials.forms.order', compact('orders', 'merchantId', 'ApiKey', 'currency', 'accountId', 'buyerEmail'));
     }
 
     /**
@@ -62,21 +68,20 @@ class CartController extends Controller
     		$item->referenceCode = $referenceCode;
     		$item->status = "order";
     		$item->update();
-    		
     	}
-    	$order = new Payment();
-    	$order->status = 'ready';
-    	$order->referenceCode = $referenceCode;
-    	$order->price = $totalPrice;
-    	$order->save();
-    	$orders = Payment::all();
     	$merchantId = 508029;
     	$ApiKey = "4Vj8eK4rloUd272L48hsrarnUA";
     	$currency = "COP";
     	$accountId = 512321;
     	$buyerEmail = "test@test.com";
-    	$signature = md5($ApiKey . '~' . $merchantId . '~' . $referenceCode . '~' . $totalPrice . '~' . $currency);
-    	return view('partials.forms.order', compact('orders', 'merchantId', 'ApiKey', 'currency', 'accountId', 'buyerEmail', 'signature'));
+    	$order = new Payment();
+    	$order->status = 'ready';
+    	$order->referenceCode = $referenceCode;
+    	$order->price = $totalPrice;
+    	$order->signature = md5($ApiKey . '~' . $merchantId . '~' . $referenceCode . '~' . $totalPrice . '~' . $currency);
+    	$order->save();
+    	$orders = Payment::all();
+    	return view('partials.forms.order', compact('orders', 'merchantId', 'ApiKey', 'currency', 'accountId', 'buyerEmail'));
     	
     }
 
@@ -88,7 +93,7 @@ class CartController extends Controller
      */
     public function show($id)
     {
-        //
+    	
     }
 
     /**
