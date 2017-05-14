@@ -36,13 +36,8 @@
 			</table>
 			@endif
 			@if($response['lapTransactionState'] == 'REJECTED')
-				<div class="alert alert-danger alert-important" role="alert">Oop! algo salió mal, por favor intenta el pago nuevamente.</div>
-				@foreach($response as $key => $value)
-				<tr>
-					<th>{{ $key }}</th>
-					<td>{{ $value }}</td>
-				</tr>
-				@endforeach
+				<div class="alert alert-danger alert-important" role="alert">Oops! algo salió mal, por favor intenta el pago nuevamente.</div>
+				<a class="btn btn-primary" href="/public/showOrders">Intentar pago nuevamente</a>
 			@endif
 			<a class="btn btn-primary" href="/public">Volver a la página principal</a>
 		</div>
