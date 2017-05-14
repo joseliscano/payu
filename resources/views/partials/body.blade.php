@@ -35,6 +35,16 @@
 	<script src="{{ asset('template/js/bootstrap.min.js') }}"></script>
 	<script>
 		$('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+		$("#botonPagar").click(function(){
+		    //$.post("/public/updateStatus",
+		    //{
+		    //	referenceCode: "Donald Duck",
+		        
+		    //},
+		    function(){
+		        alert("Data: Donald Duck \nStatus: ");
+		    });
+		});
 	</script>
 
 </body>
