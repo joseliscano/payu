@@ -131,7 +131,7 @@ class CartController extends Controller
     	//Cart::where('referenceCode', $id)->update(['status' => 'cancelled']);
     	$products = Cart::where('referenceCode', $id)->get();
     	foreach ($products as $product) {
-    		Product::where('id', $product)->increment('quantity', 1);
+    		Product::where('id', $product->product_id)->increment('quantity', 1);
     	}
     	dd($products);
     }
