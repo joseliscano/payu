@@ -50,6 +50,9 @@
 					</tr>
 				</tbody>
 			</table>
+		<form action="/order" method="post">
+			<a class="btn btn-primary" href="">Generar orden</a>
+		</form>
 		</div>
 	</div>
 </div>
