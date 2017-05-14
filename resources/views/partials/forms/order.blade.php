@@ -69,7 +69,7 @@
 							</td>
 							<td>
 								<div>
-									<form id="formCancelar" action="/public/cancelOrder" method="">
+									<form id="formCancelar" action="/public/cancelOrder" method="DELETE">
 										{{ csrf_field() }}
 										<input type="hidden" name="_method" value="DELETE" />
 										<input name="referenceCode" type="hidden" value="{{ $order->referenceCode }}"/>
