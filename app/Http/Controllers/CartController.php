@@ -47,7 +47,6 @@ class CartController extends Controller
     public function store(Request $request)
     {
     	dd($request);
-    	return redirect('/');
     	$dt = Carbon::now();
     	$referenceCode = $dt->year . $dt->month . $dt->day . $dt->hour . $dt->minute . $dt->second . $dt->micro ;
     	$merchantId = 508029;
