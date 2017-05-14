@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Product;
+use App\Payment;
+use App\Cart;
 
 class ApiController extends Controller
 {
@@ -44,6 +46,25 @@ class ApiController extends Controller
     public function store(Request $request)
     {
     	error_log("Llega: " . print_r($request->input(), true) . "\n", 3, 'files/confirmation' . Carbon::now() . '.txt');
+    	$payment = Payment::all()->where('referenceCode', $request->reference_sale);
+    	$cart = Cart::all()->where('referenceCode', $request->reference_sale);
+    	switch ($request->response_message_pol){
+    		case "APPROVED":
+    			$payment->status = "confirmed";
+    			$cart->status = "confirmed";
+    			$payment->update();
+    			$cart->update();
+    			break;
+    			
+    		case "REJECTED":
+    			break;
+    			
+    		case "PENDING":
+    			break;
+    			
+    		default:
+    			error_log("No valid Status. \n", 3, 'files/confirmation' . Carbon::now() . '.txt');
+    	}
     	return response()->json('Received', 200);
     }
 
