@@ -94,7 +94,7 @@ class CartController extends Controller
         //
     }
     
-    public function order()
+    public function order(Request $request)
     {
     	dd("llega la orden");
     	$dt = Carbon::now();
