@@ -58,7 +58,7 @@ class CartController extends Controller
     	$dt = Carbon::now();
     	$referenceCode = $dt->year . $dt->month . $dt->day . $dt->hour . $dt->minute . $dt->second . $dt->micro ;
     	foreach ($products as $product) {
-    		$item = Cart::find($product->product_id);
+    		$item = Cart::find($product->id);
     		$item->referenceCode = $referenceCode;
     		$item->update();
     		
