@@ -28,24 +28,12 @@
 				<h4>Felicidades! tu transacción ha sido aprobada!</h4>
 			@endif
 			<table class="table table-hover">
-
-				<thead>
-					<tr>
-					@foreach($response as $key => $value)
-						<th>{{ $key }}</th>
-					@endforeach
-
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-					@foreach($response as $key => $value)
-						<td>{{ $value }}</td>
-					@endforeach
-
-					</tr>
-				</tbody>
-
+				@foreach($response as $key => $value)
+				<tr>
+					<th>{{ $key }}</th>
+					<td>{{ $value }}</td>
+				</tr>
+				@endforeach
 			</table>
 			<a class="btn btn-primary" href="/public">Volver a la página principal</a>
 		</div>
