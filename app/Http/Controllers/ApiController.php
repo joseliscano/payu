@@ -21,12 +21,8 @@ class ApiController extends Controller
         $response = $_REQUEST;
         unset($response['XSRF-TOKEN']);
         unset($response['laravel_session']);
-        error_log("Llega index: " . print_r($_REQUEST, true) . "\n", 3, 'files/response' . Carbon::now() . '.txt');
-        if ($response['lapTransactionState'] == 'APPROVED') {
-        	session()->flash('message', 'Transacción aprobada!');
-        	return view('partials.result.result', compact('response'));
-        }
-        return redirect('/');
+        return view('partials.result.result', compact('response'));
+
     }
 
     /**
