@@ -25,9 +25,8 @@
 		@endif
 		<div class="row">
 			@if($response['lapTransactionState'] == 'APPROVED')
-				<h4>Felicidades! tu transacción ha sido aprobada!</h4>
-			@endif
-			<table class="table table-hover">
+				<h4 class="label label-danger">Felicidades! tu transacción ha sido aprobada!</h4>
+				<table class="table table-hover">
 				@foreach($response as $key => $value)
 				<tr>
 					<th>{{ $key }}</th>
@@ -35,6 +34,10 @@
 				</tr>
 				@endforeach
 			</table>
+			@endif
+			@if($response['lapTransactionState'] == 'REJECTED')
+				<h4 class="label label-danger">Oops! Algo Salió mal, por favor vuelve a intentar el pago!</h4>
+			@endif
 			<a class="btn btn-primary" href="/public">Volver a la página principal</a>
 		</div>
 	</div>
