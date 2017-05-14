@@ -50,7 +50,7 @@
 					</tr>
 				</tbody>
 			</table>
-		@if(!empty($items))
+		@if($items->count() > 0)
 		<form action="/public/order" method="post">
 		{{ csrf_field() }}
 			
