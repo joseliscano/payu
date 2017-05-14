@@ -46,10 +46,9 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-    	$products = Cart::all()
+    	$products = Cart::select(DB::raw('*'))
 			    	->where('status', 'added')
 			    	->get();
-    	dd($products);
     	$total = Cart::select(DB::raw('sum(quantity * price) as total'))
     	->where('status', 'added')
     	->get();
