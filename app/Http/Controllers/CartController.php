@@ -46,9 +46,14 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-    	$products = str_replace("[", "", $request['items']);
-    	$products = str_replace("]", "", $products);
+    	$products = Cart::all()
+			    	->where('status', 'added')
+			    	->get();
     	dd($products);
+    	$total = Cart::select(DB::raw('sum(quantity * price) as total'))
+    	->where('status', 'added')
+    	->get();
+    	$totalPrice = $total[0]['total'];
     	$dt = Carbon::now();
     	$referenceCode = $dt->year . $dt->month . $dt->day . $dt->hour . $dt->minute . $dt->second . $dt->micro ;
     	$merchantId = 508029;
