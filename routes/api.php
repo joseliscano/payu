@@ -15,4 +15,4 @@ use Illuminate\Http\Request;
 
 Route::resource('/response', 'ApiController');
 
-Route::middleware('auth:api')->post('/confirmation', 'ApiController@store');
+Route::resource('/confirmation', 'ApiController');
