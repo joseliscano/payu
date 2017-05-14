@@ -27,7 +27,8 @@ class HomeController extends Controller
      */
     public function create()
     {
-    	var_dump($_FILES);
+    	
+    	var_dump(__FILE__);
     	die();
     	$path = asset('/public/public/files');
     	$i = 0;
