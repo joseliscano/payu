@@ -127,10 +127,10 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-    	//Payment::where('referenceCode', $id->referenceCode)->update(['status' => 'cancelled']);
-    	//Cart::where('referenceCode', $id->referenceCode)->update(['status' => 'cancelled']);
+    	//Payment::where('referenceCode', $id)->update(['status' => 'cancelled']);
+    	//Cart::where('referenceCode', $id)->update(['status' => 'cancelled']);
     	$products = Cart::select(DB::raw('product_id'))
-    	->where('referenceCode', $id->referenceCode)
+    	->where('referenceCode', $id)
     	->get();
     	dd($products);
     }
