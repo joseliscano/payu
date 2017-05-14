@@ -28,18 +28,24 @@
 				<h4>Felicidades! tu transacción ha sido aprobada!</h4>
 			@endif
 			<table class="table table-hover">
+
 				<thead>
 					<tr>
-						<th>Codigo de referencia</th>
-						<th>Valor</th>
+					@foreach($response as $key => $value)
+						<th>{{ $key }}</th>
+					@endforeach
+
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>{{ $response['referenceCode'] }}</td>
-						<td>{{ $response['TX_VALUE'] . ' ' . $response['currency']  }}</td>
+					@foreach($response as $key => $value)
+						<td>{{ $value }}</td>
+					@endforeach
+
 					</tr>
 				</tbody>
+
 			</table>
 			<a class="btn btn-primary" href="/public">Volver a la página principal</a>
 		</div>

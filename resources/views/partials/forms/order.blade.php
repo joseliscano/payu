@@ -40,7 +40,7 @@
 							<td>{{ $order->referenceCode }}</td>
 							<td>{{ $order->price }}</td>
 							<td>
-								@if($order->status == 'ready')
+								@if($order->status == 'ready' || $order->status == 'rejected')
 								<div>
 									<form method="post" action="https://sandbox.gateway.payulatam.com/ppp-web-gateway" accept-charset="UTF-8">
 									  <input type="image" border="0" alt="" src="http://www.payulatam.com/img-secure-2015/boton_pagar_mediano.png" onClick="this.form.urlOrigen.value = window.location.href;"/>
@@ -63,7 +63,6 @@
 									  <input name="signature" value="{{ $order->signature }}" type="hidden"/>
 									  <input name="test" type="hidden"  value="1" >
 									</form>
-									
 								</div>
 								@endif
 							</td>
