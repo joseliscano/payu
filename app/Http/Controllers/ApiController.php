@@ -16,11 +16,11 @@ class ApiController extends Controller
 	public function index()
     {
         $response = $_REQUEST;
+        error_log("Llega index: " . print_r($_REQUEST, true) . "\n", 3, 'files/response' . Carbon::now() . '.txt');
         if ($response['lapTransactionState'] == 'APPROVED') {
         	session()->flash('message', 'Transacción aprobada!');
         	return view('partials.result.result', compact('response'));
         }
-    	error_log("Llega index: " . print_r($_REQUEST, true) . "\n", 3, 'files/response' . Carbon::now() . '.txt');
         $products = Product::all();
         return redirect('/');
     }
