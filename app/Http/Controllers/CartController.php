@@ -127,7 +127,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        $payment = Payment::where('referenceCode', $id);
+        $payment = Payment::where('referenceCode', $id)->get();
     	dd($payment);
     }
 }
