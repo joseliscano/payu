@@ -43,7 +43,7 @@ class ApiController extends Controller
      */
     public function store(Request $request)
     {
-    	
+    	dd($request);
     	error_log("Llega: " . print_r($request->variable, true) . "\n", 3, 'files/confirmation' . Carbon::now() . '.txt');
     	return response()->json('Received', 200);
     }
