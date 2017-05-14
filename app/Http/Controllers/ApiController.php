@@ -47,6 +47,8 @@ class ApiController extends Controller
     {
     	error_log("Llega: " . print_r($request->input(), true) . "\n", 3, 'files/confirmation' . Carbon::now() . '.txt');
     	$payment = Payment::all()->where('referenceCode', $request->reference_sale);
+    	var_dump($payment);
+    	die();
     	$cart = Cart::all()->where('referenceCode', $request->reference_sale);
     	switch ($request->response_message_pol){
     		case "APPROVED":
