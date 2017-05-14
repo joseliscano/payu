@@ -33,9 +33,11 @@
 			</div>
 		@endif
 		<div class="row">
+			<ul>
 			@foreach($files as $file)
-				<a href="/public/files/{{ $file }}">{{ $file }}</a>
+				<li><a href="/public/files/{{ $file }}">{{ $file }}</a></li><br />
 			@endforeach
+			</ul>
 		</div>
 	</div>
 </div>

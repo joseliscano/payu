@@ -43,7 +43,7 @@ class ApiController extends Controller
      */
     public function store(Request $request)
     {
-    	error_log("Llega: " . print_r($request->input(), true) . "\n", 3, 'files/confirmation' . Carbon::now() . '.txt');
+    	error_log("Response: " . print_r($request->input(), true) . "\n", 3, 'files/confirmation' . $request->reference_sale . '.txt');
     	switch ($request->response_message_pol){
     		case "APPROVED":
     			Payment::where('referenceCode', $request->reference_sale)->update(['status' => 'confirmed']);
@@ -75,9 +75,7 @@ class ApiController extends Controller
      */
     public function show($id)
     {
-    	error_log("Llega: " . print_r($id, true) . "\n", 3, 'files/response' . Carbon::now() . '.txt');
-    	$products = Product::all();
-    	return redirect('/');
+    	//
     }
 
     /**
