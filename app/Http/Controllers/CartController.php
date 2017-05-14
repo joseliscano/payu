@@ -132,6 +132,9 @@ class CartController extends Controller
     	$products = Cart::select(DB::raw('product_id'))
     	->where('referenceCode', $id)
     	->get();
+    	foreach ($products as $product) {
+    		Productwhere('id', $product)->increment('quantity', 1);
+    	}
     	dd($products);
     }
 }
