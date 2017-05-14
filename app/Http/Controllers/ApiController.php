@@ -61,7 +61,8 @@ class ApiController extends Controller
     			break;
     			
     		default:
-    			error_log("No valid Status. \n", 3, 'files/confirmation' . Carbon::now() . '.txt');
+    			Payment::where('referenceCode', $request->reference_sale)->update(['status' => $request->response_message_pol]);
+    			Cart::where('referenceCode', $request->reference_sale)->update(['status' => $request->response_message_pol]);
     	}
     	return response()->json('Received', 200);
     }

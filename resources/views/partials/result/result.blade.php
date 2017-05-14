@@ -39,6 +39,9 @@
 				<div class="alert alert-danger alert-important" role="alert">Oops! algo salió mal, por favor intenta el pago nuevamente.</div>
 				<a class="btn btn-warning" href="/public/showOrders">Intentar pago nuevamente</a>
 			@endif
+			@if($response['lapTransactionState'] == 'PENDING')
+				<div class="alert alert-warning alert-important" role="alert">La transacción está en estado pendiente, verifica si se debitó el monto de tu cuenta.</div>
+			@endif			
 			<a class="btn btn-primary" href="/public">Volver a la página principal</a>
 		</div>
 	</div>
