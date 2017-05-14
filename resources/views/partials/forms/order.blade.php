@@ -50,7 +50,7 @@
 								</form>
 							</td>
 							<td>
-								<form id="formPago" method="post" action="/public/makePayment" accept-charset="UTF-8">
+								<form id="formPago" method="post" action="/public/makePayment/18" accept-charset="UTF-8">
 								{{ csrf_field() }}  
 								<input type="image" border="0" alt="" src="http://www.payulatam.com/img-secure-2015/boton_pagar_mediano.png" onClick="this.form.urlOrigen.value = window.location.href;"/>
 								  <input name="buttonId" type="hidden" value="vO4KL61DB8UuCcnigX5SPyZo/Vh4SumspKf7pzDMmDgrlDKMt9TJBA=="/>
