@@ -41,9 +41,7 @@
 		    //	referenceCode: "Donald Duck",
 		        
 		    //},
-		    function(){
-		        alert("Data: Donald Duck \nStatus: ");
-		    });
+		    console.log('llega');
 		});
 	</script>
 
