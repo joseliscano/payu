@@ -133,7 +133,6 @@ class CartController extends Controller
     	foreach ($products as $product) {
     		Product::where('id', $product->product_id)->increment('quantity', 1);
     	}
-    	$products = Product::all();
-    	return view('partials.home.home', compact('products'));
+    	return redirect('/showOrders');
     }
 }
