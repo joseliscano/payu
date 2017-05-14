@@ -50,11 +50,13 @@
 					</tr>
 				</tbody>
 			</table>
+		@if(!empty($items))
 		<form action="/public/order" method="post">
 		{{ csrf_field() }}
 			
 			<input type="submit" class="btn btn-primary" value="Generar orden" />
 		</form>
+		@endif
 		</div>
 	</div>
 </div>
