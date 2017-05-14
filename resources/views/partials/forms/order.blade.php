@@ -65,7 +65,7 @@
 									  <input name="test" type="hidden"  value="1" >
 									</form>
 								</div>
-								@endif
+								
 							</td>
 							<td>
 								<div>
@@ -77,6 +77,7 @@
 									</form>
 								</div>
 							</td>
+							@endif
 						</tr>
 					@endforeach
 				</tbody>
