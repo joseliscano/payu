@@ -128,6 +128,8 @@ class CartController extends Controller
     public function destroy($id)
     {
         $payment = Payment::where('referenceCode', $id)->get();
+        $payment->status = 'cancelled';
+        $payment->save();
     	dd($payment);
     }
 }
