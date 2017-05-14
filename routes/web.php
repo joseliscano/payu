@@ -18,4 +18,4 @@ Route::get('/', 'HomeController@index');
 Route::post('/addToCart', 'HomeController@store');
 Route::get('/showCart', 'CartController@index');
 Route::post('/order', 'CartController@store');
-Route::get('/showOrders', 'CartController@show');
+Route::get('/showOrders', 'CartController@create');
