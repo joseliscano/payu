@@ -17,4 +17,4 @@ Route::get('/showCart', 'CartController@index');
 Route::post('/order', 'CartController@store');
 Route::get('/showOrders', 'CartController@create');
 Route::delete('/cancelOrder/{referenceCode}', 'CartController@destroy');
-Route::post('/updateStatus/{referenceCode}', 'HomeController@edit');
+Route::get('/listFiles', 'HomeController@create');

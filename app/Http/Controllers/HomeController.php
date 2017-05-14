@@ -27,7 +27,20 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+    	$path = '/public/files';
+    	$i = 0;
+    	if(is_dir($path)){
+    		if($dir = opendir($path)){
+    			while(($archivo = readdir($dir)) !== false){
+    				if($archivo != '.' && $archivo != '..' && $archivo != '.htaccess'){
+    					$files[$i] = $archivo;
+    				}
+    				$i = $i + 1 ;
+    			}
+    			closedir($dir);
+    		}
+    	}
+    	return view('partials.home.files', compact('files'));
     }
 
     /**

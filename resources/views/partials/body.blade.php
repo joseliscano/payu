@@ -17,7 +17,7 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="/public">Archivos de confirmación</a></li>
+					<li><a href="/public/listFiles">Archivos de confirmación</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -35,14 +35,6 @@
 	<script src="{{ asset('template/js/bootstrap.min.js') }}"></script>
 	<script>
 		$('div.alert').not('.alert-important').delay(3000).fadeOut(350);
-		$("#botonPagar").click(function(){
-		    //$.post("/public/updateStatus",
-		    //{
-		    //	referenceCode: "Donald Duck",
-		        
-		    //},
-		    console.log('llega');
-		});
 	</script>
 
 </body>
