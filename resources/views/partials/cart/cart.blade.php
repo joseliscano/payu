@@ -51,6 +51,7 @@
 				</tbody>
 			</table>
 		<form action="/order" method="post">
+		{{ csrf_field() }}
 		<input type="hidden" value="{{ $items }}"/>
 			<a class="btn btn-primary" href="">Generar orden</a>
 		</form>
