@@ -24,15 +24,8 @@ class CartController extends Controller
     			->where('status', 'added')
     			->get();
     	$totalPrice = $total[0]['total'];
-    	$dt = Carbon::now();
-    	$referenceCode = $dt->year . $dt->month . $dt->day . $dt->hour . $dt->minute . $dt->second . $dt->micro ;
-    	$merchantId = 508029;
-    	$ApiKey = "4Vj8eK4rloUd272L48hsrarnUA";
-    	$currency = "COP";
-    	$accountId = 512321;
-    	$buyerEmail = "test@test.com";
-    	$signature = md5($ApiKey . '~' . $merchantId . '~' . $referenceCode . '~' . $totalPrice . '~' . $currency);
-        return view('partials.cart.cart', compact('items', 'totalPrice', 'referenceCode', 'merchantId', 'ApiKey', 'currency', 'accountId', 'buyerEmail', 'signature'));
+
+        return view('partials.cart.cart', compact('items', 'totalPrice'));
     }
 
     /**
@@ -99,5 +92,19 @@ class CartController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    public function order($id)
+    {
+    	$dt = Carbon::now();
+    	$referenceCode = $dt->year . $dt->month . $dt->day . $dt->hour . $dt->minute . $dt->second . $dt->micro ;
+    	$merchantId = 508029;
+    	$ApiKey = "4Vj8eK4rloUd272L48hsrarnUA";
+    	$currency = "COP";
+    	$accountId = 512321;
+    	$buyerEmail = "test@test.com";
+    	$signature = md5($ApiKey . '~' . $merchantId . '~' . $referenceCode . '~' . $totalPrice . '~' . $currency);
+    	return view('partials.cart.cart', compact('items', 'totalPrice', 'referenceCode', 'merchantId', 'ApiKey', 'currency', 'accountId', 'buyerEmail', 'signature'));
+    	
     }
 }
