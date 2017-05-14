@@ -25,7 +25,7 @@
 		@endif
 		<div class="row">
 			@if($response['lapTransactionState'] == 'APPROVED')
-				<div class="alert alert-info" role="alert">Felicidades! tu transacción ha sido aprobada!</div>
+				<div class="alert alert-info alert-important" role="alert">Felicidades! tu transacción ha sido aprobada!</div>
 				<table class="table table-hover">
 				@foreach($response as $key => $value)
 				<tr>
