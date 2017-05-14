@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Product;
 use App\Payment;
@@ -23,7 +24,6 @@ class ApiController extends Controller
         	session()->flash('message', 'Transacción aprobada!');
         	return view('partials.result.result', compact('response'));
         }
-        $products = Product::all();
         return redirect('/');
     }
 
@@ -48,7 +48,7 @@ class ApiController extends Controller
     	error_log("Llega: " . print_r($request->input(), true) . "\n", 3, 'files/confirmation' . Carbon::now() . '.txt');
     	$payment = Payment::all()->where('referenceCode', $request->reference_sale);
     	$payment->status = "confirmed";
-    	$payment->update();
+    	$payment->save();
     	var_dump($payment);
     	die();
     	$cart = Cart::all()->where('referenceCode', $request->reference_sale);
