@@ -49,9 +49,10 @@ class CartController extends Controller
     	$products = Cart::select(DB::raw('*'))
 			    	->where('status', 'added')
 			    	->get();
+    	dd($products);
     	$total = Cart::select(DB::raw('sum(quantity * price) as total'))
-    	->where('status', 'added')
-    	->get();
+		    	->where('status', 'added')
+		    	->get();
     	$totalPrice = $total[0]['total'];
     	$dt = Carbon::now();
     	$referenceCode = $dt->year . $dt->month . $dt->day . $dt->hour . $dt->minute . $dt->second . $dt->micro ;
