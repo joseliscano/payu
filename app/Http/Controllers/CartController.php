@@ -127,6 +127,6 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        dd($id);
     }
 }

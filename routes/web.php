@@ -11,11 +11,9 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('partials.home.home');
-});*/
 Route::get('/', 'HomeController@index');
 Route::post('/addToCart', 'HomeController@store');
 Route::get('/showCart', 'CartController@index');
 Route::post('/order', 'CartController@store');
 Route::get('/showOrders', 'CartController@create');
+Route::post('/cancelOrder', 'CartController@destroy');

@@ -31,6 +31,7 @@
 						<th>Referencia</th>
 						<th>Precio</th>
 						<th>Pagar</th>
+						<th>Cancelar Orden</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -66,10 +67,18 @@
 								</div>
 								@endif
 							</td>
+							<td>
+								<div>
+									<form action="/public/cancelOrder" method="post">
+										{{ csrf_field() }}
+										{{ method_field('DELETE') }}
+										<input name="referenceCode" type="hidden" value="{{ $order->referenceCode }}"/>
+										<input type="submit" class="btn btn-primary" value="Cancelar" />
+									</form>
+								</div>
+							</td>
 						</tr>
-						
 					@endforeach
-
 				</tbody>
 			</table>
 		</div>
