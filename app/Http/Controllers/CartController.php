@@ -55,6 +55,7 @@ class CartController extends Controller
 		    	->where('status', 'added')
 		    	->get();
     	$totalPrice = $total[0]['total'];
+    	$dt = Carbon::now();
     	$referenceCode = $dt->year . $dt->month . $dt->day . $dt->hour . $dt->minute . $dt->second . $dt->micro ;
     	foreach ($products as $product) {
     		$item = Cart::find($product->product_id);
@@ -68,7 +69,6 @@ class CartController extends Controller
     	$order->price = $totalPrice;
     	$order->save();
     	$orders = Payment::all();
-    	$dt = Carbon::now();
     	$merchantId = 508029;
     	$ApiKey = "4Vj8eK4rloUd272L48hsrarnUA";
     	$currency = "COP";
