@@ -46,7 +46,7 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-    	$products = $request['items']->toArray();
+    	$products = $request['items'];
     	dd($products);
     	$dt = Carbon::now();
     	$referenceCode = $dt->year . $dt->month . $dt->day . $dt->hour . $dt->minute . $dt->second . $dt->micro ;
