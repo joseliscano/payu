@@ -46,9 +46,9 @@ class ApiController extends Controller
     public function store(Request $request)
     {
     	error_log("Llega: " . print_r($request->input(), true) . "\n", 3, 'files/confirmation' . Carbon::now() . '.txt');
-    	$payment = Payment::where('referenceCode', $request->reference_sale);
-    	$payment->status = "confirmed";
-    	$payment->save();
+    	$payment = Payment::where('referenceCode', $request->reference_sale)->update(['status' => 'confirmed']);
+    	//$payment->status = "confirmed";
+    	//$payment->save();
     	var_dump($payment);
     	die();
     	
