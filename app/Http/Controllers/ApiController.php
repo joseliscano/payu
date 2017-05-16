@@ -63,6 +63,10 @@ class ApiController extends Controller
     		default:
     			Payment::where('referenceCode', $request->reference_sale)->update(['status' => $request->response_message_pol]);
     			Cart::where('referenceCode', $request->reference_sale)->update(['status' => $request->response_message_pol]);
+    			$products = Cart::where('referenceCode', $request->reference_sale)->get();
+    			foreach ($products as $product) {
+    				Product::where('id', $product->product_id)->increment('quantity', 1);
+    			}
     	}
     	return response()->json('Received', 200);
     }
