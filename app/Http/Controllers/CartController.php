@@ -93,7 +93,7 @@ class CartController extends Controller
      */
     public function show($id)
     {
-    	return view('');
+    	return view('partials.home.instructions');
     }
 
     /**
