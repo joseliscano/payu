@@ -24,7 +24,7 @@
 			</div>
 		@endif
 		<div class="row">
-			<div class="table-responsive">
+			<div class="table-responsive col-md-9">
 				<table class="table table-hover">
 					<thead>
 						<tr>
