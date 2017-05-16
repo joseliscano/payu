@@ -18,3 +18,4 @@ Route::post('/order', 'CartController@store');
 Route::get('/showOrders', 'CartController@create');
 Route::delete('/cancelOrder/{referenceCode}', 'CartController@destroy');
 Route::get('/listFiles', 'HomeController@create');
+Route::get('/showInstructions/{instructions}', 'CartController@show');
