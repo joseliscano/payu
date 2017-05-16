@@ -44,6 +44,7 @@
 					<li>Cuando llegue la confirmación se actualiza el estado de la orden.</li>
 					<li>Si el estado es diferente a pending, success o rejected, los productos serán reembolsados a la lista del home.</li>
 					<li>Al llegar la confirmación, se genera un archivo que se puede consultar en el link Archivos de confirmación.</li>
+					<li>El nombre de los archivos tiene el número de referencia de las ordenes.</li>
 				</ol>
 			</div>
 		</div>
